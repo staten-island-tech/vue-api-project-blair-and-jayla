@@ -1,32 +1,32 @@
 <template>
-    <div>
-        <div v-for="(person, index) in data" :key="index" class="card">
-            <div class="card-body">
-                <h2>{{ person.first_name }} {{ person.last_name }}</h2>
-                <p>Fiscal Year: {{ person.fiscal_year }}</p>
-            </div>
-        </div>
+  <div>
+    <div v-for="(person, index) in data" :key="index" class="card">
+      <div class="card-body">
+        <h2>{{ person.first_name }} {{ person.last_name }}</h2>
+        <p>Fiscal Year: {{ person.fiscal_year }}</p>
+      </div>
     </div>
+  </div>
 </template>
-  
-  <script>
-  export default {
-    data() {
-      return {
-        data: []
-      };
-    },
-    async mounted() {
-      try {
-        const response = await fetch("https://data.cityofnewyork.us/resource/k397-673e.json");
-        const jsonData = await response.json();
-        this.data = jsonData;
-      } catch (error) {
-        console.error('Error fetching data:', error);
-      }
+
+<script>
+export default {
+  data() {
+    return {
+      data: []
     }
-  };
-  </script>
+  },
+  async mounted() {
+    try {
+      const response = await fetch('https://data.cityofnewyork.us/resource/k397-673e.json')
+      const jsonData = await response.json()
+      this.data = jsonData
+    } catch (error) {
+      console.error('Error fetching data:', error)
+    }
+  }
+}
+</script>
 
 <style scoped>
 .card {
