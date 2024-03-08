@@ -1,15 +1,21 @@
 <template>
   <div id="app">
     <h1>NYC Payroll</h1>
-    <CardDisplay />
+    <cardData />
+    <BarChart />
   </div>
 </template>
 
 <script>
 import CardDisplay from './components/cardData.vue'
+import BarChart from 'path/to/component/BarChart'
 
 export default {
-  components: {
+  name: 'App',
+
+  components: 
+  { BarChart }
+  {
     CardDisplay
   },
   data() {
