@@ -51,6 +51,3 @@ export default {
 };
 console.log(fetchData)
 </script>
-
-<style scoped></style>
-</script>
