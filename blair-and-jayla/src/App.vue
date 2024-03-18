@@ -49,5 +49,4 @@ export default {
     }
   }
 };
-console.log(fetchData)
 </script>
