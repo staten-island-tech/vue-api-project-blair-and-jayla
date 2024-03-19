@@ -2,12 +2,23 @@
   <div id="app">
     <h1>NYC Payroll</h1>
     <cardData />
-
+    <BarChart />
+    <div class="container">
+    <Bar v-if="loaded" :data="chartData" />
   </div>
+</div>
+
+
+
 </template>
 
 <script>
 import cardData from './components/cardData.vue';
+import { Bar } from 'vue-chartjs'
+import { Chart as ChartJS, Title, Tooltip, Legend, BarElement, CategoryScale, LinearScale } from 'chart.js'
+
+ChartJS.register(Title, Tooltip, Legend, BarElement, CategoryScale, LinearScale)
+
 
 
 
@@ -17,6 +28,7 @@ export default {
   components: {
     cardData
   },
+
   data() {
     return {
       data: [],
@@ -50,4 +62,25 @@ export default {
     }
   }
 };
+
+export default {
+  name: 'BarChart',
+  components: { Bar },
+  data: () => ({
+    loaded: false,
+    chartData: null
+  }),
+  async mounted () {
+    this.loaded = false
+
+    try {
+      const { userlist } = await fetch('/api/userlist')
+      this.chartdata = userlist
+
+      this.loaded = true
+    } catch (e) {
+      console.error(e)
+    }
+  }
+}
 </script>
