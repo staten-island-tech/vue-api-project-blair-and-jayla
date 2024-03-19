@@ -2,13 +2,13 @@
   <div id="app">
     <h1>NYC Payroll</h1>
     <cardData />
-    <BarChart />
+
   </div>
 </template>
 
 <script>
 import cardData from './components/cardData.vue';
-import BarChart from '@/components/BarChart';
+
 
 
 export default {
@@ -16,9 +16,6 @@ export default {
 
   components: {
     cardData
-  },
-  {
-  BarChart,
   },
   data() {
     return {
