@@ -2,7 +2,7 @@
   <div id="app">
     <h1>NYC Payroll</h1>
     <cardData />
-    <BarChart />
+    <RadarChart/>
     <div class="container">
     <Bar v-if="loaded" :data="chartData" />
   </div>
@@ -14,10 +14,9 @@
 
 <script>
 import cardData from './components/cardData.vue';
+import radarData from './views/RadarChart.vue'
 import { Bar } from 'vue-chartjs'
-import { Chart as ChartJS, Title, Tooltip, Legend, BarElement, CategoryScale, LinearScale } from 'chart.js'
 
-ChartJS.register(Title, Tooltip, Legend, BarElement, CategoryScale, LinearScale)
 
 
 

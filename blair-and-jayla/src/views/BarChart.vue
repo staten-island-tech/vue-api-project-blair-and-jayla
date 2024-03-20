@@ -24,7 +24,8 @@
         chartOptions: {
           responsive: true
         }
-      }
-    }
-  }
+      };
+    };
+  };
+
   </script>
