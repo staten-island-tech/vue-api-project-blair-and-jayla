@@ -1,10 +1,10 @@
 <template>
-   <Bar :data="radarData"/>
+   <Radar :data="radarData"/>
 </template>
 
 <script>
 import { Chart as ChartJS, Title, Tooltip, Legend, BarElement, CategoryScale, LinearScale } from 'chart.js'
-import { Bar } from 'vue-chartjs'
+import { Radar } from 'vue-chartjs'
 ChartJS.register(Title, Tooltip, Legend, BarElement, CategoryScale, LinearScale)
 
 const radarData = {

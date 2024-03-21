@@ -2,7 +2,7 @@
   <div id="app">
     <h1>NYC Payroll</h1>
     <cardData />
-    <RadarChart/>
+    <RadarChart />
     <div class="container">
     <Bar v-if="loaded" :data="chartData" />
   </div>
@@ -14,15 +14,15 @@
 
 <script>
 import cardData from './components/cardData.vue';
-import radarData from './views/RadarChart.vue'
-import { Bar } from 'vue-chartjs'
+import RadarChart from './views/RadarChart.vue'
+import { Radar } from 'vue-chartjs'
 
 
 
 
 
 export default {
-  name: 'App',
+  name: 'App', 
 
   components: {
     cardData
