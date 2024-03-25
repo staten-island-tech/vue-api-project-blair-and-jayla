@@ -27,7 +27,8 @@ export default {
 
   components: {
     cardData,
-    BarChart 
+    BarChart,
+    RadarChart
   },
 
   data() {
