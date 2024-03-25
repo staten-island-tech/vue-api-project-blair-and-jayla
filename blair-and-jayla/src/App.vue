@@ -47,16 +47,16 @@ export default {
 
         console.log('Data:', data);
 
-        const firstItem = data[0];
+      //   const firstItem = data[0];
 
-        const fiscalYear = firstItem.fiscal_year;
-        const agencyName = firstItem.agency_name;
+      //   const fiscalYear = firstItem.fiscal_year;
+      //   const agencyName = firstItem.agency_name;
 
-        console.log('Fiscal Year:', fiscalYear);
-        console.log('Payroll Number:', payrollNumber);
-        console.log('Agency Name:', agencyName);
+      //   console.log('Fiscal Year:', fiscalYear);
+      //   console.log('Payroll Number:', payrollNumber);
+      //   console.log('Agency Name:', agencyName);
 
-        this.firstItem = firstItem;
+      //   this.firstItem = firstItem;
       } catch (error) {
         console.error('Error fetching data:', error);
       }

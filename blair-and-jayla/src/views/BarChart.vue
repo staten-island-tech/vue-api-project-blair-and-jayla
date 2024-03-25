@@ -1,12 +1,13 @@
 <template>
-  <div class="container">
+<Bar class="bar"></Bar>
+  <!-- <div class="container">
     <Bar id= "my-chart-id" v-if="loaded" :options="chartOptions":data="chartData" />
   </div>
   <Bar
     id="my-chart-id"
     :options="chartOptions"
     :data="chartData"
-  />
+  /> -->
 </template>
 
 <script>
@@ -18,24 +19,6 @@ ChartJS.register(Title, Tooltip, Legend, BarElement, CategoryScale, LinearScale)
 export default {
   name: 'BarChart',
   components: { Bar },
-  data: () => ({
-    loaded: false,
-    chartData: null
-  }),
-  async mounted () {
-    this.loaded = false
-
-    try {
-      const { userlist } = await fetch('/api/userlist')
-      this.chartdata = userlist
-
-      this.loaded = true
-    } catch (e) {
-      console.error(e)
-    }
-  }
-}
-
   // data() {
   //   return {
   //     chartData: {
@@ -47,4 +30,7 @@ export default {
   //     }
   //   }
   // }
+}
+
+
 </script>
