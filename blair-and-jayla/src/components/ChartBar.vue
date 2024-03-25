@@ -1,8 +1,26 @@
 <template>
-   <BarChart chart-data="" options="" css-classes = "chart-container"/>
+   <div>
+<BarChart data="ChartData"> </BarChart>
+   </div>
 </template>
 
-<script setup>
-import { BarChart } from "vue-chart-3"
+<script>
+
+import { Bar } from 'vue-chartjs'
+import {
+  Chart as ChartJS,
+  Title,
+  Tooltip,
+  Legend,
+  BarElement,
+  CategoryScale,
+  LinearScale
+} from 'chart.js'
+
+ChartJS.register(Title, Tooltip, Legend, BarElement, CategoryScale, LinearScale)
+
 </script>
- 
+
+<style  scoped>
+
+</style>
