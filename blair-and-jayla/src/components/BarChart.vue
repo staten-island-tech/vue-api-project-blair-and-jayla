@@ -33,7 +33,6 @@ export default {
         this.renderChart();
       } catch (error) {
         console.error('Error fetching chart data:', error);
-        // Handle error
       }
     },
     processData(data) {
@@ -94,7 +93,6 @@ export default {
       });
     },
     getCustomColor(index) {
-      // Define an array of custom colors
       const customColors = [
         '#FFE5EC', 
         '#C9E4DE', 
@@ -102,7 +100,6 @@ export default {
         '#DEDAF4', 
         '#FAEDCB', 
       ];
-      // Return the custom color based on the index
       return customColors[index % customColors.length];
     }
   }
