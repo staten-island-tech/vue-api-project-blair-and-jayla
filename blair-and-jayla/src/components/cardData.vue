@@ -29,11 +29,22 @@ export default {
 </script>
 
 <style scoped>
+
+.container {
+  padding: 20px;
+}
+
+.card-container {
+  display: flex;
+  flex-wrap: nowrap;
+  overflow-x: auto;
+}
 .card {
+  flex: 0 0 auto;
   background-color: #f0f0f0;
   border-radius: 8px;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-  margin-bottom: 20px;
+
 }
 
 .card-body {
@@ -51,4 +62,6 @@ p {
   font-size: 1em;
   color: #666;
 }
+
+
 </style>

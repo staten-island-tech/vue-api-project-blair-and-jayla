@@ -15,9 +15,8 @@
 
 <script>
 import cardData from './components/cardData.vue';
-import RadarChart from './views/RadarChart.vue';
-import { Radar } from 'vue-chartjs';
-import BarChart from './views/BarChart.vue';
+import RadarChart from './components/RadarChart.vue';
+import BarChart from './components/BarChart.vue';
 
 
 
@@ -45,7 +44,8 @@ export default {
       try {
         const response = await fetch('https://data.cityofnewyork.us/resource/k397-673e.json');
         const data = await response.json();
-
+        this.data = data;
+        this.dataLoaded
         console.log('Data:', data);
 
       //   const firstItem = data[0];
