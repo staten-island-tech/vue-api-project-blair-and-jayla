@@ -23,6 +23,34 @@ import { onMounted } from 'vue'
 
 ChartJS.register(Title, Tooltip, Legend, BarElement, CategoryScale, LinearScale)
 
+export default  {
+    name: 'BarChart',
+    components: { Bar }, 
+    props: {
+    data: Array,
+    labels: Array,
+  },
+    data(){
+        return{
+            chartData: {
+                labels: this.labels,
+                datasets: [ 
+                    {
+                        label: 'Salaries',
+                        backgroundColor: '#00000',
+                        data: this.data
+                    }
+                ]
+            },
+            chartOptions: {
+                responsive: true
+            }
+        }
+    }
+}
+
+</script>
+
 // export default{
 //    name: 'BarChart',
 //    components: {'Bar'},
