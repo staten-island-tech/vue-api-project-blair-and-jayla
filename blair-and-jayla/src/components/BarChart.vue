@@ -1,5 +1,6 @@
  <template>
   <div>
+
     <canvas ref="barChart"></canvas>
   </div>
 </template>
@@ -63,7 +64,7 @@ export default {
       const datasets = boroughs.map((borough, index) => ({
         label: borough,
         data: labels.map(label => this.chartData[label][borough] || 0),
-        backgroundColor: this.getCustomColor(index), // Use custom color for each dataset
+        backgroundColor: this.getCustomColor(index),
         borderColor: 'rgba(54, 162, 235, 1)',
         borderWidth: 1
       }));

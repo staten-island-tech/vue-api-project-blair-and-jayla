@@ -1,22 +1,26 @@
 <template>
   <div id="app">
     <h1>NYC Payroll</h1>
-    <cardData />
-    <RadarChart />
-    <BarChart />
+    <nav>
+      <RouterLink to="/">HOME</RouterLink> <br>
+      <RouterLink to="/about">SALARY RANGES AND AMOUNT OF EMPLOYEES IN EACH RANGE BASED ON BOROUGH</RouterLink> <br>
+      <RouterLink to="/p">A DIFFERENT VISUAL</RouterLink> <br>
+
+    </nav>
+
     <div class="container">
-    <Bar v-if="loaded" :data="chartData" />
+
   </div>
 </div>
 
-
+<RouterView />
 
 </template>
 
 <script>
-import cardData from './components/cardData.vue';
-import RadarChart from './components/RadarChart.vue';
-import BarChart from './components/BarChart.vue';
+
+import { RouterLink, RouterView } from 'vue-router';
+
 
 
 
@@ -24,16 +28,12 @@ import BarChart from './components/BarChart.vue';
 export default {
   name: 'App', 
 
-  components: {
-    cardData,
-    BarChart,
-    RadarChart
-  },
 
   data() {
     return {
       data: [],
-      firstItem: {}
+      firstItem: {},
+      loaded: false,
     };
   },
   mounted() {
@@ -45,7 +45,7 @@ export default {
         const response = await fetch('https://data.cityofnewyork.us/resource/k397-673e.json');
         const data = await response.json();
         this.data = data;
-        this.dataLoaded
+
         console.log('Data:', data);
 
       //   const firstItem = data[0];
